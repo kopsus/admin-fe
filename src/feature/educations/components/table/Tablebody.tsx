@@ -20,7 +20,7 @@ const Tablebody = () => {
           <tr key={idx} className="hover:bg-slate-100 dark:hover:bg-slate-800">
             <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark min-w-30 max-w-50">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                <div className="h-12.5 w-15 rounded-md">
+                <div className="h-12.5 min-w-15 max-w-15 rounded-md">
                   <img src={ProductOne} alt="Product" />
                 </div>
                 <p className="text-black dark:text-white overflow-hidden whitespace-nowrap text-ellipsis">
