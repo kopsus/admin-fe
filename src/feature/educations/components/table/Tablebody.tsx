@@ -28,7 +28,7 @@ const Tablebody = () => {
                 </p>
               </div>
             </td>
-            <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark min-w-50 max-w-96">
+            <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark max-w-96">
               <p className="text-black dark:text-white overflow-hidden whitespace-nowrap text-ellipsis">
                 {value.description}
               </p>

@@ -7,7 +7,7 @@ const TableLayout = () => {
     <>
       <TableLayoutTemplate>
         <div className="flex justify-end">
-          <label className="input input-bordered flex items-center gap-2  md:w-1/3 m-3 text-black">
+          <label className="input input-bordered flex items-center gap-2  md:w-1/3 m-3 text-black bg-white">
             <input
               type="text"
               className="grow"
