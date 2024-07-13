@@ -4,12 +4,11 @@ import { useState } from 'react';
 import MenuTable from '../../../_global/components/MenuEllipsTable/MenuTable';
 import { useAtom } from 'jotai';
 import { ServiceDialog } from '../../../_global/store';
-import DialogDelete from '../../../_global/components/Modal/DialogDelete';
 
 const Tablebody = () => {
   const [activeMenu, setActiveMenu] = useState<number | null>(null);
   const [, setDrawer] = useAtom(ServiceDrawer);
-  const [dialog, setDialog] = useAtom(ServiceDialog);
+  const [, setDialog] = useAtom(ServiceDialog);
 
   return (
     <>
@@ -59,24 +58,6 @@ const Tablebody = () => {
           </tr>
         ))}
       </tbody>
-      <DialogDelete
-        title="Hapus item ini"
-        description="Apakah anda yakin akan menghapus item ini?"
-        onSuccess={() => {
-          alert('berhasil');
-          setDialog({
-            show: false,
-            id: '',
-          });
-        }}
-        onHide={() => {
-          setDialog((prev) => ({
-            ...prev,
-            show: false,
-          }));
-        }}
-        show={dialog.show}
-      />
     </>
   );
 };

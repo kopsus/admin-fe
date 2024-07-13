@@ -6,9 +6,12 @@ import TableHead from './TableHead';
 import TableBodyAdmin from './TableBodyAdmin';
 import { ServiceActiveTab } from '../../store';
 import { useAtom } from 'jotai';
+import DialogDelete from '../../../_global/components/Modal/DialogDelete';
+import { ServiceDialog } from '../../../_global/store';
 
 const TableLayout = () => {
   const [activeTab, setActiveTab] = useAtom(ServiceActiveTab);
+  const [dialog, setDialog] = useAtom(ServiceDialog);
 
   return (
     <TableLayoutTemplate>
@@ -79,6 +82,24 @@ const TableLayout = () => {
           )}
         </table>
       </div>
+      <DialogDelete
+        title="Hapus user ini"
+        description="Apakah anda yakin akan menghapus user ini?"
+        onSuccess={() => {
+          alert('berhasil');
+          setDialog({
+            show: false,
+            id: '',
+          });
+        }}
+        onHide={() => {
+          setDialog((prev) => ({
+            ...prev,
+            show: false,
+          }));
+        }}
+        show={dialog.show}
+      />
     </TableLayoutTemplate>
   );
 };

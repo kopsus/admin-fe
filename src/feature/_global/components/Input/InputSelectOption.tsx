@@ -23,7 +23,7 @@ const InputSelectOption = ({
       onChange={onChange}
       name={name}
     >
-      <option disabled selected value={''}>
+      <option disabled value={''}>
         {disabledText}
       </option>
       {children}

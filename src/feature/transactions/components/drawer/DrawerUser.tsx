@@ -72,7 +72,9 @@ const DrawerUser = () => {
               disabledText=" Pilih RT"
             >
               {dummmyDataTransactionUsers.map((value, idx) => (
-                <option key={idx}>{value.RT}</option>
+                <option key={idx} value={value.RT}>
+                  {value.RT}
+                </option>
               ))}
             </InputSelectOption>
           </div>
@@ -88,7 +90,9 @@ const DrawerUser = () => {
               disabledText=" Pilih Jenis Sampah"
             >
               {dummmyDataTransactionUsers.map((value, idx) => (
-                <option key={idx}>{value.JenisSampah}</option>
+                <option key={idx} value={value.JenisSampah}>
+                  {value.JenisSampah}
+                </option>
               ))}
             </InputSelectOption>
           </div>

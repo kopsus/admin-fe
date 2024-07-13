@@ -87,7 +87,9 @@ const DrawerPengepul = () => {
               disabledText=" Pilih Jenis Sampah"
             >
               {dummmyDataTransactionPengepul.map((value, idx) => (
-                <option key={idx}>{value.JenisSampah}</option>
+                <option key={idx} value={value.JenisSampah}>
+                  {value.JenisSampah}
+                </option>
               ))}
             </InputSelectOption>
           </div>

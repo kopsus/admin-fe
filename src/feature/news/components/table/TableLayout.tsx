@@ -1,8 +1,12 @@
+import { useAtom } from 'jotai';
+import DialogDelete from '../../../_global/components/Modal/DialogDelete';
 import TableLayoutTemplate from '../../../_global/components/Tables/TableLayoutTemplate';
+import { ServiceDialog } from '../../../_global/store';
 import TableBody from './TableBody';
 import TableHead from './TableHead';
 
 const TableLayout = () => {
+  const [dialog, setDialog] = useAtom(ServiceDialog);
   return (
     <>
       <TableLayoutTemplate>
@@ -36,6 +40,24 @@ const TableLayout = () => {
           </table>
         </div>
       </TableLayoutTemplate>
+      <DialogDelete
+        title="Hapus item ini"
+        description="Apakah anda yakin akan menghapus item ini?"
+        onSuccess={() => {
+          alert('berhasil');
+          setDialog({
+            show: false,
+            id: '',
+          });
+        }}
+        onHide={() => {
+          setDialog((prev) => ({
+            ...prev,
+            show: false,
+          }));
+        }}
+        show={dialog.show}
+      />
     </>
   );
 };
