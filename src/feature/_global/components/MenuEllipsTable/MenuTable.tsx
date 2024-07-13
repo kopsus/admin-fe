@@ -25,7 +25,7 @@ export const ButtonMenuTable: React.FC<IButtonMenuTableProps> = ({
   return (
     <div
       onClick={onClick}
-      className="absolute right-10 flex flex-col rounded-md text-sm border border-stroke bg-white shadow-default dark:border-strokedark p-2"
+      className="absolute right-10 flex flex-col rounded-md text-sm border border-stroke shadow-default dark:border-strokedark p-2 bg-white"
     >
       {children}
     </div>
@@ -62,7 +62,7 @@ const MenuTable = ({
   return (
     <div>
       <button
-        className="btn btn-sm bg-white border-slate-200"
+        className="btn btn-sm bg-white border-slate-200 hover:bg-stone-50 hover:border-stone-50"
         onClick={toggleMenu}
       >
         <BsThreeDots />
