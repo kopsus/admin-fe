@@ -21,7 +21,7 @@ const InputText = ({
       name={name}
       value={value}
       onChange={onChange}
-      className="input input-bordered w-full text-black-2 dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+      className="input input-bordered w-full text-black-2 bg-white dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
     />
   );
 };

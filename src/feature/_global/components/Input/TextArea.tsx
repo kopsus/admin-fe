@@ -11,7 +11,7 @@ interface TextAreaProps {
 const TextArea = ({ name, placeholder, onChange, value }: TextAreaProps) => {
   return (
     <textarea
-      className="textarea textarea-bordered w-full h-50 max-h-50 text-black-2 dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+      className="textarea textarea-bordered w-full h-50 max-h-50 text-black-2 bg-white dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
       placeholder={placeholder}
       name={name}
       value={value}

@@ -18,7 +18,7 @@ const InputSelectOption = ({
 }: InputSelectOptionProps) => {
   return (
     <select
-      className="select select-bordered w-full dark:bg-form-input dark:text-white dark:focus:border-primary dark:border-form-strokedark text-black-2"
+      className="select select-bordered w-full bg-white dark:bg-form-input dark:text-white dark:focus:border-primary dark:border-form-strokedark text-black-2"
       value={value}
       onChange={onChange}
       name={name}

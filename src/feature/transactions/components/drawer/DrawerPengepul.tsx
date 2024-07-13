@@ -24,15 +24,19 @@ const DrawerPengepul = () => {
 
   const onInputChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLSelectElement
-  > = ({ target: { name, value } }) => {
+  > = ({ target }) => {
+    const { name, value, type } = target as HTMLInputElement;
+    const isCheckbox = type === 'checkbox';
+
     setDrawer((prev) => ({
       ...prev,
       data: {
         ...prev.data,
-        [name]: value,
+        [name]: isCheckbox ? (target as HTMLInputElement).checked : value,
       } as IDataTransactionPengepul,
     }));
   };
+
   return (
     <RightDrawer
       show={drawer.show}
