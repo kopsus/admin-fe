@@ -1,16 +1,18 @@
-import { dummmyDataTransactionUsers } from '../../store';
+import React from 'react';
 import InputText from '../../../_global/components/Input/InputText';
-import InputSelectOption from '../../../_global/components/Input/InputSelectOption';
-import { IDataTransactionUsers } from '../../types';
+import { IDataTransactionPengepul } from '../../types';
 import { IDrawerCreate } from '../../../_global/types';
-import { DropdownJenisSampahUsers } from '../dropdown/DropdownJenisSampah';
+import { DropdownJenisSampahAdmin } from '../dropdown/DropdownJenisSampah';
 
-interface IFormAddTransaction {
+interface IFormAddTransactionProps {
   onInputChange: React.ChangeEventHandler<HTMLSelectElement | HTMLInputElement>;
-  drawer: IDrawerCreate<IDataTransactionUsers>;
+  drawer: IDrawerCreate<IDataTransactionPengepul>;
 }
 
-const FormAddTransaction = ({ onInputChange, drawer }: IFormAddTransaction) => {
+const FormAddTransactionPengepul = ({
+  drawer,
+  onInputChange,
+}: IFormAddTransactionProps) => {
   return (
     <form action="#">
       <div className="p-6.5">
@@ -21,31 +23,26 @@ const FormAddTransaction = ({ onInputChange, drawer }: IFormAddTransaction) => {
             type="text"
             name="Name"
             onChange={onInputChange}
-            value={drawer.data?.Name || ''}
+            value={drawer.data?.name || ''}
           />
         </div>
 
         <div className="mb-3">
-          <label className="mb-1 block text-black dark:text-white">RT</label>
-          <InputSelectOption
-            name="RT"
+          <label className="mb-1 block text-black dark:text-white">Email</label>
+          <InputText
+            placeholder="Example@gmail.com"
+            type="email"
+            name="email"
             onChange={onInputChange}
-            value={drawer.data?.RT || ''}
-            disabledText=" Pilih RT"
-          >
-            {dummmyDataTransactionUsers.map((value, idx) => (
-              <option key={idx} value={value.RT}>
-                {value.RT}
-              </option>
-            ))}
-          </InputSelectOption>
+            value={drawer.data?.email || ''}
+          />
         </div>
 
         <div className="mb-3">
           <label className="mb-1 block text-black dark:text-white">
             Jenis Sampah
           </label>
-          <DropdownJenisSampahUsers drawer={drawer} />
+          <DropdownJenisSampahAdmin drawer={drawer} />
         </div>
 
         <div className="mb-3">
@@ -91,4 +88,4 @@ const FormAddTransaction = ({ onInputChange, drawer }: IFormAddTransaction) => {
   );
 };
 
-export default FormAddTransaction;
+export default FormAddTransactionPengepul;

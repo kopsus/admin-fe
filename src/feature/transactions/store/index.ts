@@ -136,7 +136,16 @@ export const dummmyDataTransactionPengepul: IDataTransactionPengepul[] = [
     id: '1',
     name: 'Randy Pangalila',
     email: 'randy@gmail.com',
-    JenisSampah: 'Kardus',
+    JenisSampah: [
+      {
+        id: '1',
+        name: 'kardus',
+      },
+      {
+        id: '2',
+        name: 'Botol Kaca',
+      },
+    ],
     Berat: '12',
     Total: 20000,
     Status: false,
@@ -146,7 +155,16 @@ export const dummmyDataTransactionPengepul: IDataTransactionPengepul[] = [
     id: '2',
     name: 'Jakson Karmila',
     email: 'kkj@gmail.com',
-    JenisSampah: 'Botol Plastik',
+    JenisSampah: [
+      {
+        id: '1',
+        name: 'kardus',
+      },
+      {
+        id: '3',
+        name: 'Botol plastik',
+      },
+    ],
     Berat: '12',
     Total: 20000,
     Status: false,
@@ -187,7 +205,7 @@ export const EmptyDataTransactionUser: IDataTransactionUsers = {
 export const EmptyDataTransactionPengepul: IDataTransactionPengepul = {
   id: '',
   Berat: '',
-  JenisSampah: '',
+  JenisSampah: [],
   name: '',
   email: '',
   Status: false,

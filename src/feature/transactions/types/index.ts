@@ -16,7 +16,7 @@ export type IDataTransactionPengepul = {
   id: string;
   name: string;
   email: string;
-  JenisSampah: string;
+  JenisSampah: IJenisSampah[];
   Berat: string;
   Total: number | string;
   Status: boolean;
