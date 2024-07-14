@@ -51,6 +51,9 @@ importers:
         specifier: ^0.0.2
         version: 0.0.2
     devDependencies:
+      '@hudoro/dropdown':
+        specifier: 0.0.3-beta.33
+        version: 0.0.3-beta.33
       '@types/react':
         specifier: ^18.2.17
         version: 18.3.3
@@ -336,6 +339,10 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@hudoro/dropdown@0.0.3-beta.33':
+    resolution: {integrity: sha512-CZzdavja9DJq3wsdEGopto3Hk23NpNiRHgMktiWNMcMwQSvEusbvAPOWgfovXPILnu4OzjZaookfSyM+fNJqSw==}
+    engines: {node: '>=18.0.0'}
 
   '@isaacs/cliui@8.0.2':
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
@@ -1640,6 +1647,11 @@ snapshots:
 
   '@esbuild/win32-x64@0.18.20':
     optional: true
+
+  '@hudoro/dropdown@0.0.3-beta.33':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   '@isaacs/cliui@8.0.2':
     dependencies:

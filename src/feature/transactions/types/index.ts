@@ -1,10 +1,11 @@
+import { IJenisSampah } from '../../_global/types';
 import { IRoleUsers } from '../../users/types';
 
 export type IDataTransactionUsers = {
   id: string;
   Name: string;
   RT: number | string;
-  JenisSampah: string;
+  JenisSampah: IJenisSampah[];
   Berat: string;
   Total: number | string;
   Status: boolean;

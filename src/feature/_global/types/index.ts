@@ -8,3 +8,8 @@ export type IDialogDelete = {
   show: boolean;
   id: string;
 };
+
+export type IJenisSampah = {
+  id: string;
+  name: string;
+};

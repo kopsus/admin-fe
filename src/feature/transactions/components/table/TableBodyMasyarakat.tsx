@@ -29,7 +29,7 @@ const TableBody = () => {
             </td>
             <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark max-w-96">
               <p className="text-black dark:text-white max-w-[95%] overflow-hidden whitespace-nowrap text-ellipsis">
-                {value.JenisSampah}
+                {value.JenisSampah.map((value) => value.name).join(', ')}
               </p>
             </td>
             <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark max-w-96">

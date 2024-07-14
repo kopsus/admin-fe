@@ -11,7 +11,7 @@ const InputText = ({
   placeholder,
   type,
   name,
-  value,
+  value = '',
   onChange,
 }: InputTextProps) => {
   return (

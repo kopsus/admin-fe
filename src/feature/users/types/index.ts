@@ -15,6 +15,11 @@ export type IDataAdmin = {
   role: IRoleUsers;
 };
 
+export type IRT = {
+  id: string;
+  name: string;
+};
+
 export type IActiveTab = {
   name: IRoleUsers;
 };
