@@ -1,5 +1,5 @@
-interface InputTextProps {
-  placeholder: string;
+interface InputProps {
+  placeholder?: string;
   type: string;
   name: string;
   readOnly?: boolean | undefined;
@@ -7,13 +7,13 @@ interface InputTextProps {
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
-const InputText = ({
+const Input = ({
   placeholder,
   type,
   name,
   value = '',
   onChange,
-}: InputTextProps) => {
+}: InputProps) => {
   return (
     <input
       type={type}
@@ -26,4 +26,4 @@ const InputText = ({
   );
 };
 
-export default InputText;
+export default Input;

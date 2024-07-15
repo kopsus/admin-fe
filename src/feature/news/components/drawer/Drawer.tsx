@@ -1,9 +1,8 @@
 import { useAtom } from 'jotai';
-import InputText from '../../../_global/components/Input/InputText';
+import Input from '../../../_global/components/Input/Input';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { EmptyDataNews, ServiceDrawer } from '../../store';
 import InputFile from '../../../_global/components/Input/InputFile';
-import DatePickerOne from '../../../_global/components/DatePicker/DatePickerOne';
 import { useEffect } from 'react';
 import { ITableNew } from '../../types';
 import TextArea from '../../../_global/components/Input/TextArea';
@@ -56,7 +55,7 @@ const Drawer = () => {
             <label className="mb-1 block text-black dark:text-white">
               Judul
             </label>
-            <InputText
+            <Input
               placeholder="Judul"
               type="text"
               name="title"
@@ -81,7 +80,12 @@ const Drawer = () => {
             <label className="mb-1 block text-black dark:text-white">
               Tanggal
             </label>
-            <DatePickerOne />
+            <Input
+              type="date"
+              name="createdAt"
+              value={drawer.data?.createdAt}
+              onChange={onInputChange}
+            />
           </div>
 
           <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90 mt-10">

@@ -1,7 +1,7 @@
 import { useAtom } from 'jotai';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { dummyDataUser, EmptyDataUser, ServiceDrawerUser } from '../../store';
-import InputText from '../../../_global/components/Input/InputText';
+import InputText from '../../../_global/components/Input/Input';
 import { IDataUser } from '../../types';
 import { useEffect } from 'react';
 import InputSelectOption from '../../../_global/components/Input/InputSelectOption';

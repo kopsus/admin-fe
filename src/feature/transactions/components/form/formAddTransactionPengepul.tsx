@@ -1,5 +1,5 @@
 import React from 'react';
-import InputText from '../../../_global/components/Input/InputText';
+import InputText from '../../../_global/components/Input/Input';
 import { IDataTransactionPengepul } from '../../types';
 import { IDrawerCreate } from '../../../_global/types';
 import { DropdownJenisSampahAdmin } from '../dropdown/DropdownJenisSampah';

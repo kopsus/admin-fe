@@ -1,5 +1,5 @@
 import { dummmyDataTransactionUsers } from '../../store';
-import InputText from '../../../_global/components/Input/InputText';
+import InputText from '../../../_global/components/Input/Input';
 import InputSelectOption from '../../../_global/components/Input/InputSelectOption';
 import { IDataTransactionUsers } from '../../types';
 import { IDrawerCreate } from '../../../_global/types';
@@ -41,7 +41,7 @@ const FormAddTransaction = ({ onInputChange, drawer }: IFormAddTransaction) => {
           </InputSelectOption>
         </div>
 
-        <div className="mb-3">
+        <div className="mb-3 bg-red-500">
           <label className="mb-1 block text-black dark:text-white">
             Jenis Sampah
           </label>

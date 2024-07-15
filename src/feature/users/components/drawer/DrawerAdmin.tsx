@@ -3,7 +3,7 @@ import { EmptyDataAdmin, ServiceDrawerAdmin } from '../../store';
 import { useAtom } from 'jotai';
 import { IDataAdmin } from '../../types';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
-import InputText from '../../../_global/components/Input/InputText';
+import InputText from '../../../_global/components/Input/Input';
 
 const DrawerAdmin = () => {
   const [drawer, setDrawer] = useAtom(ServiceDrawerAdmin);

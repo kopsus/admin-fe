@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai';
 import InputFile from '../../../_global/components/Input/InputFile';
-import InputText from '../../../_global/components/Input/InputText';
+import InputText from '../../../_global/components/Input/Input';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { EmptyDataEducation, ServiceDrawer } from '../../store';
 import { useEffect } from 'react';
