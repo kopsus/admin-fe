@@ -55,6 +55,11 @@ const Drawer = () => {
           ...prev,
           show: false,
         }));
+        setDrawer((prev) => ({
+          ...prev,
+          data: { ...EmptyDataEducation },
+        }));
+        setPreviewImage(null);
       }}
       title={drawer.type === 'CREATE' ? 'Tambah Edukasi' : 'Edit Edukasi'}
     >

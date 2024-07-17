@@ -1,5 +1,4 @@
 import { dummyProducts, ServiceDrawer } from '../../store';
-import ProductOne from '../../../../core/assets/product/product-01.png';
 import { useState } from 'react';
 import MenuTable from '../../../_global/components/MenuEllipsTable/MenuTable';
 import { useAtom } from 'jotai';
@@ -18,7 +17,7 @@ const Tablebody = () => {
             <td className="border-b border-[#eee] py-4 px-4 dark:border-strokedark max-w-20">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                 <div className="h-12.5 w-15 rounded-md">
-                  <img src={ProductOne} alt="Product" />
+                  <img src={value.image} alt="Product" />
                 </div>
                 <p className="text-black dark:text-white overflow-hidden whitespace-nowrap text-ellipsis max-w-20">
                   {value.title}

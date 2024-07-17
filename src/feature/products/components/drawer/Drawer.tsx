@@ -3,11 +3,12 @@ import InputFile from '../../../_global/components/Input/InputFile';
 import InputText from '../../../_global/components/Input/Input';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { EmptyDataProduct, ServiceDrawer } from '../../store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { IDataProduct } from '../../types';
 
 const Drawer = () => {
   const [drawer, setDrawer] = useAtom(ServiceDrawer);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (drawer.show && drawer.type === 'CREATE') {
@@ -15,19 +16,36 @@ const Drawer = () => {
         ...prev,
         data: { ...EmptyDataProduct },
       }));
+      setPreviewImage(null);
     }
   }, [drawer.show, drawer.type, setDrawer]);
 
-  const onInputChange: React.ChangeEventHandler<HTMLInputElement> = ({
-    target: { name, value },
-  }) => {
-    setDrawer((prev) => ({
-      ...prev,
-      data: {
-        ...prev.data,
-        [name]: value,
-      } as IDataProduct,
-    }));
+  const onInputChange: React.ChangeEventHandler<
+    HTMLInputElement | HTMLTextAreaElement
+  > = ({ target }) => {
+    const { name, value, type } = target as HTMLInputElement;
+
+    if (type === 'file') {
+      const file = (target as HTMLInputElement).files?.[0];
+      if (file) {
+        setPreviewImage(URL.createObjectURL(file));
+        setDrawer((prev) => ({
+          ...prev,
+          data: {
+            ...prev.data,
+            [name]: file.name,
+          } as IDataProduct,
+        }));
+      }
+    } else {
+      setDrawer((prev) => ({
+        ...prev,
+        data: {
+          ...prev.data,
+          [name]: value,
+        } as IDataProduct,
+      }));
+    }
   };
 
   return (
@@ -38,6 +56,11 @@ const Drawer = () => {
           ...prev,
           show: false,
         }));
+        setDrawer((prev) => ({
+          ...prev,
+          data: { ...EmptyDataProduct },
+        }));
+        setPreviewImage(null);
       }}
       title={drawer.type === 'CREATE' ? 'Tambah Produk' : 'Edit Produk'}
     >
@@ -47,7 +70,16 @@ const Drawer = () => {
             <label className="mb-1 block text-black dark:text-white">
               Image
             </label>
-            <InputFile name="image" />
+            {previewImage || drawer.data?.image ? (
+              <div className="h-30 min-w-32 max-w-15 rounded-md overflow-hidden mb-2">
+                <img
+                  src={previewImage || drawer.data?.image}
+                  alt="Product"
+                  className="w-full h-full object-cover block"
+                />
+              </div>
+            ) : null}
+            <InputFile name="image" onChange={onInputChange} />
           </div>
 
           <div className="mb-3">
