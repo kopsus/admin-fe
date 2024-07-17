@@ -41,7 +41,7 @@ const FormAddTransaction = ({ onInputChange, drawer }: IFormAddTransaction) => {
           </InputSelectOption>
         </div>
 
-        <div className="mb-3 bg-red-500">
+        <div className="mb-3">
           <label className="mb-1 block text-black dark:text-white">
             Jenis Sampah
           </label>

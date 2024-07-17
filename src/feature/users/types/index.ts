@@ -4,7 +4,7 @@ export type IDataUser = {
   id: string;
   Name: string;
   RT: number | string;
-  NoHp: string;
+  NoHp: number | string;
   role: IRoleUsers;
 };
 
