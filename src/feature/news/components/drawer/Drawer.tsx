@@ -3,12 +3,13 @@ import Input from '../../../_global/components/Input/Input';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { EmptyDataNews, ServiceDrawer } from '../../store';
 import InputFile from '../../../_global/components/Input/InputFile';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ITableNew } from '../../types';
 import TextArea from '../../../_global/components/Input/TextArea';
 
 const Drawer = () => {
   const [drawer, setDrawer] = useAtom(ServiceDrawer);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   useEffect(() => {
     if (drawer.show && drawer.type === 'CREATE') {
@@ -16,19 +17,36 @@ const Drawer = () => {
         ...prev,
         data: { ...EmptyDataNews },
       }));
+      setPreviewImage(null);
     }
   }, [drawer.show, drawer.type, setDrawer]);
 
   const onInputChange: React.ChangeEventHandler<
     HTMLInputElement | HTMLTextAreaElement
-  > = ({ target: { name, value } }) => {
-    setDrawer((prev) => ({
-      ...prev,
-      data: {
-        ...prev.data,
-        [name]: value,
-      } as ITableNew,
-    }));
+  > = ({ target }) => {
+    const { name, value, type } = target as HTMLInputElement;
+
+    if (type === 'file') {
+      const file = (target as HTMLInputElement).files?.[0];
+      if (file) {
+        setPreviewImage(URL.createObjectURL(file));
+        setDrawer((prev) => ({
+          ...prev,
+          data: {
+            ...prev.data,
+            [name]: file.name, // Store the file name or handle it as needed
+          } as ITableNew,
+        }));
+      }
+    } else {
+      setDrawer((prev) => ({
+        ...prev,
+        data: {
+          ...prev.data,
+          [name]: value,
+        } as ITableNew,
+      }));
+    }
   };
 
   return (
@@ -48,7 +66,14 @@ const Drawer = () => {
             <label className="mb-1 block text-black dark:text-white">
               Image
             </label>
-            <InputFile name="image" />
+            <div className="h-30 min-w-32 max-w-15 rounded-md overflow-hidden mb-2">
+              <img
+                src={previewImage || drawer.data?.image}
+                alt="Product"
+                className="w-full h-full object-cover block"
+              />
+            </div>
+            <InputFile name="image" onChange={onInputChange} />
           </div>
 
           <div className="mb-3">
