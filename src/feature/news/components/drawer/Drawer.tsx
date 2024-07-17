@@ -66,13 +66,15 @@ const Drawer = () => {
             <label className="mb-1 block text-black dark:text-white">
               Image
             </label>
-            <div className="h-30 min-w-32 max-w-15 rounded-md overflow-hidden mb-2">
-              <img
-                src={previewImage || drawer.data?.image}
-                alt="Product"
-                className="w-full h-full object-cover block"
-              />
-            </div>
+            {previewImage || drawer.data?.image ? (
+              <div className="h-30 min-w-32 max-w-15 rounded-md overflow-hidden mb-2">
+                <img
+                  src={previewImage || drawer.data?.image}
+                  alt="Product"
+                  className="w-full h-full object-cover block"
+                />
+              </div>
+            ) : null}
             <InputFile name="image" onChange={onInputChange} />
           </div>
 
