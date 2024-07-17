@@ -9,18 +9,29 @@ interface IFormAddEducationProps {
     HTMLInputElement | HTMLTextAreaElement
   >;
   drawer: IDrawerCreate<EducationType>;
+  previewImage: string | null;
 }
 
 const FormAddEducation = ({
   onInputChange,
   drawer,
+  previewImage,
 }: IFormAddEducationProps) => {
   return (
     <form action="#">
       <div className="p-6.5">
         <div className="mb-3">
           <label className="mb-1 block text-black dark:text-white">Image</label>
-          <InputFile name="image" />
+          {previewImage || drawer.data?.image ? (
+            <div className="h-30 min-w-32 max-w-15 rounded-md overflow-hidden mb-2">
+              <img
+                src={previewImage || drawer.data?.image}
+                alt="Product"
+                className="w-full h-full object-cover block"
+              />
+            </div>
+          ) : null}
+          <InputFile name="image" onChange={onInputChange} />
         </div>
 
         <div className="mb-3">

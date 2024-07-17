@@ -31,7 +31,11 @@ const FormAddNews = ({
               />
             </div>
           ) : null}
-          <InputFile name="image" onChange={onInputChange} />
+          <InputFile
+            name="image"
+            onChange={onInputChange}
+            value={drawer.data?.image}
+          />
         </div>
 
         <div className="mb-3">

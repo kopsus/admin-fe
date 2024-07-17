@@ -3,7 +3,7 @@ import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
 import { EmptyDataNews, ServiceDrawer } from '../../store';
 import { useEffect, useState } from 'react';
 import { ITableNew } from '../../types';
-import FormAddNews from '../form/formAddNews';
+import FormAddNews from '../form/FormAddNews';
 
 const Drawer = () => {
   const [drawer, setDrawer] = useAtom(ServiceDrawer);
@@ -32,7 +32,7 @@ const Drawer = () => {
           ...prev,
           data: {
             ...prev.data,
-            [name]: file.name, // Store the file name or handle it as needed
+            [name]: file.name,
           } as ITableNew,
         }));
       }
