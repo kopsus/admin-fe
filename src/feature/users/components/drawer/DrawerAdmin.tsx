@@ -3,7 +3,7 @@ import { EmptyDataAdmin, ServiceDrawerAdmin } from '../../store';
 import { useAtom } from 'jotai';
 import { IDataAdmin } from '../../types';
 import RightDrawer from '../../../_global/components/RightDrawer/RightDrawer';
-import InputText from '../../../_global/components/Input/Input';
+import FormAdmin from '../form/FormAdmin';
 
 const DrawerAdmin = () => {
   const [drawer, setDrawer] = useAtom(ServiceDrawerAdmin);
@@ -40,39 +40,7 @@ const DrawerAdmin = () => {
       }}
       title={drawer.type === 'CREATE' ? 'Tambah Pengguna' : 'Edit Pengguna'}
     >
-      <form action="#">
-        <div className="p-6.5">
-          <div className="mb-3">
-            <label className="mb-1 block text-black dark:text-white">
-              Nama
-            </label>
-            <InputText
-              placeholder="Nama"
-              type="text"
-              name="name"
-              onChange={onInputChange}
-              value={drawer.data?.name}
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="mb-1 block text-black dark:text-white">
-              Email
-            </label>
-            <InputText
-              placeholder="Email"
-              type="email"
-              name="email"
-              onChange={onInputChange}
-              value={drawer.data?.email}
-            />
-          </div>
-
-          <button className="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90 mt-10">
-            {drawer.type === 'CREATE' ? 'Tambah Pengguna' : 'Edit Pengguna'}
-          </button>
-        </div>
-      </form>
+      <FormAdmin drawer={drawer} onInputChange={onInputChange} />
     </RightDrawer>
   );
 };
