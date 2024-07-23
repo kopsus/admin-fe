@@ -3,7 +3,6 @@ import { MdOutlineCreate } from 'react-icons/md';
 import { ServiceDrawer } from '../store';
 import { useAtom } from 'jotai';
 import Drawer from '../components/drawer/Drawer';
-import ProductOne from '../../../core/assets/product/product-01.png';
 
 const NewsDetail = () => {
   const [, setDrawer] = useAtom(ServiceDrawer);
@@ -34,7 +33,9 @@ const NewsDetail = () => {
 
         <div className="h-90 rounded-md overflow-hidden my-5">
           <img
-            src={ProductOne}
+            src={
+              'https://lh3.googleusercontent.com/drive-viewer/AKGpihakLR_jNOikPjvuDJGamr4y2ouuT-PCtrACIGW5HIi24krWXk8T5xPm3kE69AMHjFu-aN8q7N-_C4kpj2scM1xsAMdCXCpUqZ4=s1600-rw-v1'
+            }
             alt="image"
             className="w-full h-full block object-cover"
           />

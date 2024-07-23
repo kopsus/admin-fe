@@ -9,7 +9,6 @@ import News from '../feature/news/views/News';
 import Educations from '../feature/educations/views/Educations';
 import Products from '../feature/products/views/Products';
 import Users from '../feature/users/views/Users';
-import Profile from '../feature/profile/views/Profile';
 import Transactions from '../feature/transactions/view/Transactions';
 import NewsDetail from '../feature/news/views/NewsDetail';
 import ForgetPassword from '../feature/authentication/ForgetPassword';
@@ -104,15 +103,6 @@ function App() {
                   <>
                     <PageTitle title="Users" />
                     <Users />
-                  </>
-                }
-              />
-              <Route
-                path="/profile"
-                element={
-                  <>
-                    <PageTitle title="Profile" />
-                    <Profile />
                   </>
                 }
               />

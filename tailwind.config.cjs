@@ -5,9 +5,6 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
-    fontFamily: {
-      satoshi: ['Satoshi', 'sans-serif'],
-    },
     screens: {
       '2xsm': '375px',
       xsm: '425px',
@@ -204,12 +201,6 @@ module.exports = {
       },
       opacity: {
         65: '.65',
-      },
-      backgroundImage: {
-        video: "url('../images/video/video.png')",
-      },
-      content: {
-        'icon-copy': 'url("../images/icon/icon-copy-alt.svg")',
       },
       transitionProperty: { width: 'width', stroke: 'stroke' },
       borderWidth: {
